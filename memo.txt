@@ -1,0 +1,43 @@
+Use complete sentences, as you would for an English class
+
+1. Discuss your experiences in writing these programs.
+What was the hardest part for you? Are you now a recursion expert?
+
+In general, the hardest part of coding for me is starting the project in a way
+that makes sense and being confident in the different files I will need. This PA
+had a solid starting point so that was not an issue.
+The hardest part for me was implementing chooseMove for the computer in Nim.
+Tracing recursive calls makes my head spin...but less now!
+I feel much more clear on DP and recursion - that a problem is a good candidate
+for DP (and recursion in general) if it's subproblems aren't overlapping, and if
+the subproblems can be solved the same way the bigger problem is solved. Saving
+the partial results as you go so that you don't have to recalculate them again
+is clear to me now.
+
+2. How many game states are there in Nim (upper bound, like 3^9 for tic tac toe)?
+Don't forget that the full game state includes whose turn it is.
+What is the height of the full game tree?
+(Don't try to draw the whole tree! Just think about the longest possible game.)
+
+Since, there is 1) whose turn, 2) what row, and 3) how many stars, and there are
+9 positions (one for each star), the upper bound is also 3^9. If each player
+removes the minimum number of starts each turn, that would be the longest
+possible game. This would be 9 turns, so height of full game = 9.
+
+
+3. It is well known that the first player in Nim has a winning strategy by
+picking A3, i.e. from row 1, take 3 stars. What does this mean for the value
+of the initial position in Nim?  What is the initial position value
+for TicTacToe? What does that mean?
+
+It means that the initial position value for Nim is always equals to whichever
+player is going first. In TicTacToe, however, if the value of the initial position
+is equal to whoever goes first, that just means the CAN win or CAN draw, but
+CANNOT lose unless they mess up. 
+
+4. We could use dynamic programming for Nim.
+What should the Position class contain in that case?
+
+For Nim, the Position class should contain a private int[][] to represent the
+board rows and stars, the current game position, and an equals and hashcode
+function to we can use a HashMap to store the values.
